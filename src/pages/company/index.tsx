@@ -17,12 +17,12 @@ const CompanyPage = () => {
         <title>Company Details - Lars Lauryssens</title>
         <meta
           name="description"
-          content="Details about the company where I'll be working, my role, location, and more."
+          content="Details about the company where I'll be doing my internship, my role, location, and more."
         />
       </Head>
       <div className={styles.pageContainer}>
         <div className={styles.mainContent}>
-          <h1 className={styles.pageTitle}>IBM Client Innovation Centre </h1>
+          <h1 className={styles.pageTitle}>IBM Client Innovation Center Antwerp </h1>
 
           {/* Company Overview */}
           <section className={styles.collaborations}>
