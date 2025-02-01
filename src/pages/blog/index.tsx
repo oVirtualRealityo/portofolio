@@ -6,6 +6,8 @@ import PostComponent from "@/components/PostComponent/PostComponent";
 import PostComponentOpen from "@/components/PostComponent/PostComponentOpen";
 import BlogHeader from "@/components/BlogHeader/BlogHeader";
 import AddForm from "@/components/Forms/AddForm";
+import DOMPurify from 'dompurify';
+
 /* ---------------------------
    Server-Side Data Fetch
 ---------------------------- */
@@ -16,8 +18,6 @@ interface postPageProps {
 export const getServerSideProps: GetServerSideProps<postPageProps> = async () => {
   const res = await fetch("https://portofolio-alpha-lac.vercel.app/api/posts");
   const data = await res.json();
-  const corrpassword = process.env.ADMIN_PASSWORD;
-  console.log(corrpassword);
   if (!data) {
     return {
       notFound: true,
@@ -52,12 +52,17 @@ const postPage = ({ posts }: postPageProps) => {
     }
     else {
       const guess = window.prompt("Geef het adminpasswoord");
+      if (!guess) {
+        window.alert("No password entered.");
+        return;
+      }
+      const sanitizedInput = DOMPurify.sanitize(guess);
       const response = await fetch("https://portofolio-alpha-lac.vercel.app/api/admin", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ password: guess }),
+        body: JSON.stringify({ password: sanitizedInput }),
       });
       const data = await response.json();
 

@@ -10,6 +10,12 @@ const PostComponentOpenNoFilter = ({ post }: PostComponentOpenProps) => {
         month: "2-digit",
         year: "numeric",
     });
+    
+    const speed = 50;
+    const descriptionDelay = 0;
+    const descriptionDuration = post.description.length * speed + 500;
+
+    
     return (
         <div className={styles.postExpanded}>
             {/* Placeholder Image */}

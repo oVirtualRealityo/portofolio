@@ -1,14 +1,166 @@
-/*blockquote p::before {
-    content: '\201C'
-  }
-  blockquote p::after {
-    content:'\201D'
-  }
-    */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .linkedButton {
   padding: 0.2rem;
   border-radius: 24px;
   border: 2px solid blue;
   color:rgb(0, 119, 255)
+}
+/* About.module.css */
+
+/* Outer Container with Gradient Background */
+.pageContainer {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  font-family: 'Press Start 2P', cursive; /* Arcade-style font */
+
+  background: linear-gradient(135deg, #141e30 0%, #243b55 100%);
+}
+
+/* Wrapper for 2-Column Layout */
+.contentWrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  color: #ffffff;
+}
+
+/* Main / Left Column */
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+/* Profile Section */
+.profileSection {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.profilePhotoWrapper {
+  width: 250px;
+  height: 260px;
+  flex-shrink: 0;
+  border-radius: 48px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.introText {
+  line-height: 1.6;
+  min-width: 120px;
+}
+
+/* Collaborations & Links Sections */
+.collaborations,
+.links {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  margin: 0 0 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.collabList {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.linkButton {
+  display: inline-block;
+  width: fit-content;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+}
+
+.linkButton:hover {
+  background-color: #e2e2e2;
+}
+
+/* Additional Linked Button (if needed) */
+.linkedButton {
+  padding: 0.2rem;
+  border-radius: 24px;
+  border: 2px solid blue;
+  color: rgb(0, 119, 255);
+}
+
+/* Aside / Right Column */
+.skillsAside {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2.8rem;
+  align-self: start;
+}
+
+.asideTitle {
+  font-size: 1.3rem;
+  margin: 0 0 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.skillsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skillsList li {
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+  }
+  .skillsAside {
+    margin-top: 2rem;
+  }
+  .profileSection {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
 }
