@@ -14,7 +14,7 @@ interface postPageProps {
 }
 
 export const getServerSideProps: GetServerSideProps<postPageProps> = async () => {
-  const res = await fetch("http://localhost:3000/api/posts");
+  const res = await fetch("https://portofolio-alpha-lac.vercel.app/api/posts");
   const data = await res.json();
   const corrpassword = process.env.ADMIN_PASSWORD;
   console.log(corrpassword);
@@ -52,7 +52,7 @@ const postPage = ({ posts }: postPageProps) => {
     }
     else {
       const guess = window.prompt("Geef het adminpasswoord");
-      const response = await fetch("http://localhost:3000/api/admin", {
+      const response = await fetch("https://portofolio-alpha-lac.vercel.app/api/admin", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

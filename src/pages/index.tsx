@@ -12,7 +12,7 @@ interface HomePageProps {
 }
 
 export const getServerSideProps: GetServerSideProps<HomePageProps> = async () => {
-  const res = await fetch("http://localhost:3000/api/posts");
+  const res = await fetch("https://portofolio-alpha-lac.vercel.app/api/posts");
   const data = await res.json();
   if (!data) {
     return {
