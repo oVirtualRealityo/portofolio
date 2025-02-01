@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+ 
  /* Full Page Wrapper with Gradient Background */
  .pageWrapper {
     min-height: 100vh;
@@ -18,41 +20,57 @@
     color: #ffffff;
   }
 
-  /* Page Title Style */
-  .pageTitle {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-  }
+/* Page Title Style */
+.pageTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: -0.02em;
+  font-family: 'Press Start 2P', cursive; /* Arcade-style font */
+}
+
+.shortIntro {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  overflow: hidden;
+  display: inline-block;
+  white-space: pre-line;
+  color: #fff;
+  opacity: 0;
+  animation: typing 4s steps(40) 1s forwards, fadeIn 0.5s ease 5s forwards;
+}
+
 
   /* Section Card Style */
   .infoSection {
     background-color: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(6px);
     border-radius: 8px;
-    padding: 2rem;
+    padding: 1rem;
     margin-bottom: 2rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-family: 'Press Start 2P', cursive;
   }
 
+
   .infoSection:hover {
-    cursor: grab;
+    cursor: url('/dog-paw.svg') 16 16, auto;
     background-color: rgba(255, 255, 255, 0.181);
 
   }
 
   .sectionTitle {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-weight: 400;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 0.5rem;
   }
 
   .sectionText {
-    font-size: 1rem;
+    font-size: 0.6rem;
     line-height: 1.6;
     margin: 0;
   }
@@ -82,5 +100,22 @@
 
     .sectionTitle {
       font-size: 1.25rem;
+    }
+  }
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }

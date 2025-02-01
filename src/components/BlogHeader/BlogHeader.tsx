@@ -9,22 +9,19 @@ interface BlogHeaderProps {
 
 const BlogHeader = ({admin, handleAdmin, filter, setFilter}: BlogHeaderProps) => {
     return (
-        <div style={{
-            display:"flex",
-            flexDirection:"row",
-            justifyContent:"space-between"
-        }}>
+        <div className={styles.blogHeader}>
         {admin ? (
-          <button onClick={handleAdmin}>Log out</button>
+          <button className={styles.loginButton} onClick={handleAdmin}>Log out</button>
         ) : (
-          <button onClick={handleAdmin}>Log in</button>
+          <button className={styles.loginButton} onClick={handleAdmin}>Log in</button>
         )}
-
+        <div className={styles.filterBox}>
         {filter == "" ? (
           <p>klik op een tag om te filteren</p>
         ) : (
-          <button onClick={() => setFilter("")}>Reset tagfilter</button>
+          <button className={styles.filterButton} onClick={() => setFilter("")}>Reset tagfilter</button>
         )}
+        </div>
       </div>
     )
 

@@ -1,0 +1,31 @@
+.blogHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid grey;
+    background-color: #1a202c;
+    padding: 0.4rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    border-radius: 16px;
+}
+
+.filterButton {
+    padding: 0.4rem;
+    border-radius: 24px;
+    border: 2px solid red;
+    background-color: transparent;
+    color: red;
+}
+
+.loginButton {
+    padding: 0.4rem;
+    border-radius: 24px;
+    border: 2px solid grey;
+    background-color: transparent;
+    color: white;
+}
+
+.filterBox {
+    text-align: center;
+}
