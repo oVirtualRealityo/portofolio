@@ -1,0 +1,239 @@
+/* Basic Reset & Global Layout */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(135deg, #030406 0%, #243b55 100%);
+    min-height: 100vh;    
+    color: #fff;
+  }
+
+  .pageContainer {
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 100vw;
+    padding: 2rem 1rem;
+
+  }
+
+  .pageTitle {
+    text-align: center;
+    font-size: 2.2rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  /* 
+   * -------------------
+   * Post Form
+   * -------------------
+   */
+  .postForm {
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .formRow {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .formGroup {
+    flex: 1;
+  }
+
+  .formLabel {
+    display: block;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+  }
+
+  .formInput,
+  .formTextarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: #222;
+    color: #fff;
+  }
+
+  .formTextarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .submitButton {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #333;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+  }
+
+  .submitButton:hover {
+    background-color: #555;
+  }
+
+  /* 
+   * -------------------
+   * Posts List
+   * -------------------
+   */
+  .postsList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    width: 95%;
+    background-color:#1a202c;
+    border: 2px solid white;
+    border-radius:24px;
+    height: 70vh;
+    overflow: auto;
+    margin: auto;
+
+
+  }
+
+  .noPostsMessage {
+    text-align: center;
+    color: #ccc;
+    font-size: 1rem;
+    margin-top: 3rem;
+  }
+
+  /* 
+   * -------------------
+   * Single Post Item
+   * -------------------
+   */
+  .postItem {
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+    
+  }
+
+  .postCollapsed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .dateHighlight {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #aaa;
+    margin-right: 1rem;
+  }
+
+  .postTitle {
+    flex: 1;
+    font-size: 1.4rem;
+    margin: 0;
+    font-weight: 300;
+  }
+
+  .toggleIcon {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #aaa;
+    margin-left: 1rem;
+  }
+
+  /* 
+   * -------------------
+   * Expanded Post
+   * -------------------
+   */
+  .postExpanded {
+    background-color:#273143;
+    padding:0.4rem 1rem ;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 24px ;
+  }
+
+  /* Placeholder image wrapper */
+  .postImageWrapper {
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+  }
+
+  .postImage {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .postImage:hover {
+    transform: scale(1.05);
+  }
+
+  .postExpandedContent {
+    padding: 0.5rem 0;
+  }
+
+  .bigDate {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0 0 1rem 0;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+  }
+
+  .postDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #ddd;
+  }
+
+  .postMeta {
+    font-size: 0.9rem;
+    color: #999;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .metaLabel {
+    color: #bbb;
+    font-weight: 500;
+  }
+
+  /* 
+   * -------------------
+   * Responsive
+   * -------------------
+   */
+  @media (max-width: 600px) {
+    .bigDate {
+      font-size: 1.6rem;
+    }
+
+    .postTitle {
+      font-size: 1.2rem;
+    }
+  }
