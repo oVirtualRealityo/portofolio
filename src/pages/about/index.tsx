@@ -39,9 +39,19 @@ const aboutPage = () => {
 
           {/* Profile + Intro */}
           <div className={styles.profileSection}>
-            {/* Example profile photo - replace src with your actual image */}
-            <div className={styles.profilePhotoWrapper}>
-              <img src="/gator.jpg" width={250} alt="Profile Photo" />
+            <div className={styles.profilePhotos}>
+              <div className={styles.profilePhotoWrapper}>
+                <img src="/gator.jpg" width={250} alt="Profile Photo 1" />
+              </div>
+              <div className={styles.profilePhotoWrapper}>
+                <img src="/boom.jpg" width={250} alt="Profile Photo 2" />
+              </div>
+              {/* Uncomment the next block if you want a third photo */}
+              {/*
+              <div className={styles.profilePhotoWrapper}>
+                <img src="/photo3.jpg" width={250} alt="Profile Photo 3" />
+              </div>
+              */}
             </div>
             <blockquote className={styles.introText}>
               <q>
