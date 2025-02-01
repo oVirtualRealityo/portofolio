@@ -6,7 +6,7 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     const data = Object.fromEntries(formData.entries());
     
 
-    const res = await fetch("http://localhost:3000/api/posts", {
+    const res = await fetch("https://portofolio-alpha-lac.vercel.app/api/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
