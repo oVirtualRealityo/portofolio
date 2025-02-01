@@ -21,6 +21,13 @@ const NavigationBar = () => {
     };
   }, []);
 
+  // When a link is clicked on mobile, close the menu.
+  const handleLinkClick = () => {
+    if (isMobile) {
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <>
       {/* Mobile Hamburger Menu */}
@@ -28,9 +35,7 @@ const NavigationBar = () => {
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           style={{
-            position: "fixed",
-            top: "20px",
-            left: "20px",
+            width:"100%",
             zIndex: 1001,
             background: "#1a202c",
             color: "#ffffff",
@@ -38,6 +43,7 @@ const NavigationBar = () => {
             padding: "10px",
             borderRadius: "4px",
             cursor: "pointer",
+            fontSize: "2rem", // Increased font size for a larger burger icon
           }}
         >
           ☰
@@ -47,60 +53,86 @@ const NavigationBar = () => {
       {/* Navigation Bar */}
       <nav
         style={{
-          position: isMobile ? "fixed" : "fixed",
+          position: "fixed",
           top: 0,
           left: 0,
           height: isMobile ? (isMenuOpen ? "100vh" : "0") : "100vh",
           width: isMobile ? "100%" : "200px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "flex-start",
-          padding: isMobile ? "60px 20px 20px 20px" : "40px 20px",
           backgroundColor: "#1a202c",
           color: "#ffffff",
           boxShadow: "4px 0 12px rgba(0, 0, 0, 0.1)",
           zIndex: 1000,
           overflow: "hidden",
-          transition: "height 0.3s ease",
+          transition: "height 0.3s ease, padding 0.3s ease",
+          padding: isMobile ? (isMenuOpen ? "60px 20px 20px 20px" : "0 20px") : "40px 20px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
         }}
       >
-        <Link
-          href={{ pathname: "/" }}
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-            fontSize: "1.1rem",
-            marginBottom: "20px",
-            transition: "color 0.2s",
-          }}
-        >
-          Home
-        </Link>
-        <Link
-          href={{ pathname: "/blog" }}
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-            fontSize: "1.1rem",
-            marginBottom: "20px",
-            transition: "color 0.2s",
-          }}
-        >
-          Blogs
-        </Link>
-        <Link
-          href={{ pathname: "/about" }}
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-            fontSize: "1.1rem",
-            marginBottom: "20px",
-            transition: "color 0.2s",
-          }}
-        >
-          Over mij
-        </Link>
+        {/* Only render links if we're not on mobile or if the menu is open */}
+        {(!isMobile || isMenuOpen) && (
+          <>
+            <Link href="/" passHref legacyBehavior>
+              <a
+                onClick={handleLinkClick}
+                style={{
+                  color: "inherit",
+                  textDecoration: "none",
+                  fontSize: "1.1rem",
+                  marginBottom: "20px",
+                  transition: "color 0.2s",
+                }}
+              >
+                Home
+              </a>
+            </Link>
+            <Link href="/blog" passHref legacyBehavior>
+              <a
+                onClick={handleLinkClick}
+                style={{
+                  color: "inherit",
+                  textDecoration: "none",
+                  fontSize: "1.1rem",
+                  marginBottom: "20px",
+                  transition: "color 0.2s",
+                }}
+              >
+                Blogs
+              </a>
+            </Link>
+            <Link href="/about" passHref legacyBehavior>
+              <a
+                onClick={handleLinkClick}
+                style={{
+                  color: "inherit",
+                  textDecoration: "none",
+                  fontSize: "1.1rem",
+                  marginBottom: "20px",
+                  transition: "color 0.2s",
+                }}
+              >
+                Over mij
+              </a>
+            </Link>
+            <Link href="/company" passHref legacyBehavior>
+              <a
+                onClick={handleLinkClick}
+                style={{
+                  color: "inherit",
+                  textDecoration: "none",
+                  fontSize: "1.1rem",
+                  marginBottom: "20px",
+                  transition: "color 0.2s",
+                }}
+              >
+                Over het bedrijf
+              </a>
+            </Link>
+            
+          </>
+        )}
       </nav>
     </>
   );

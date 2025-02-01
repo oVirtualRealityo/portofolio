@@ -17,6 +17,7 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     if (res.ok) {
       console.log("Post added successfully");
       // Optionally, you could refresh the page or re-fetch posts here
+      window.location.reload();
     } else {
       console.error("Failed to add post " + res.status);
     }

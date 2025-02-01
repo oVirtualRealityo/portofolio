@@ -35,6 +35,8 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async () =>
 const Home = ({ post }: HomePageProps) => {
   const [isPostExpanded, setIsPostExpanded] = useState(false);
   const [isAboutExpanded, setIsAboutExpanded] = useState(false);
+  const [isProjectExpanded, setIsProjectExpanded] = useState(false);
+  const [isCompanyExpanded, setIsCompanyExpanded] = useState(false);
 
   const [displayedIntroText, setDisplayedIntroText] = useState("");
   const router = useRouter();
@@ -87,33 +89,57 @@ const Home = ({ post }: HomePageProps) => {
 
         <section
           className={styles.infoSection}
-          onClick={() => setIsPostExpanded(!isPostExpanded)}
         >
-          <h2 className={styles.sectionTitle}>Meest Recente Post</h2>
+          <h2
+          onClick={() => setIsPostExpanded(!isPostExpanded)}
+          className={styles.sectionTitle}>Meest Recente Post</h2>
           {isPostExpanded && <PostComponentOpenNoFilter post={post} />}
+          <p style={{width:"100%", display: "flex", justifyContent:"flex-end"}}>
+          <Link href={{pathname:'/blog'}} title="Naar blogs" style={{color:"inherit"}}>Naar blogs</Link>
+          </p>
         </section>
 
         {/* Over Mij Section */}
         <section
           className={styles.infoSection}
-          onClick={() => setIsAboutExpanded(!isAboutExpanded)}
         >
-          <h2 className={styles.sectionTitle}>Over mij</h2>
+          <h2 className={styles.sectionTitle}
+          onClick={() => setIsAboutExpanded(!isAboutExpanded)}
+          >Over mij</h2>
           {isAboutExpanded && (
             <p className={styles.sectionText}>
-              Korte tekst over mij. Vermeld hier wie je bent, wat je doet, en een korte
-              blik op je werk.
+              Als je graag wat meer te weten wilt komen over mij kan je naar de "over mij" pagina gaan!
             </p>
           )}
+          <p style={{width:"100%", display: "flex", justifyContent:"flex-end"}}>
+          <Link href={{pathname:'/about'}} title="Naar Over mij" style={{color:"inherit"}}>Over mij</Link>
+          </p>
+        </section>
+
+        <section
+          className={styles.infoSection}
+        >
+          <h2 className={styles.sectionTitle}
+          onClick={() => setIsCompanyExpanded(!isCompanyExpanded)}
+          >Over het bedrijf</h2>
+          {isCompanyExpanded && (
+            <p className={styles.sectionText}>
+              Als je <Link href={{pathname:"/company"}} style={{color:"inherit"}}>deze</Link> volgt dan kom je op de pagina over mijn stage-bedrijf terecht!
+            </p>
+          )}
+           <p style={{width:"100%", display: "flex", justifyContent:"flex-end"}}>
+          <Link href={{pathname:'/company'}} title="Naar Over company" style={{color:"inherit"}}>Over IBM-CIC</Link>
+          </p>
         </section>
 
         {/* SECTION: Links to Other Pages */}
         <section
           className={styles.infoSection}
-          onClick={() => setIsAboutExpanded(!isAboutExpanded)}
         >
-          <h2 className={styles.sectionTitle}>Projecten</h2>
-          {isAboutExpanded && (
+          <h2 className={styles.sectionTitle}
+          onClick={() => setIsProjectExpanded(!isProjectExpanded)}
+          >Projecten</h2>
+          {isProjectExpanded && (
             <p className={styles.sectionText}>
               More coming soon!
               
