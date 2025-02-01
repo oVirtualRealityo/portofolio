@@ -47,7 +47,21 @@ const Home = ({post} : HomePageProps) => {
         <h1 className={styles.pageTitle}>Portofolio Lars Lauryssens</h1>
 
         {/* SECTION: Profile Picture */}
-        <p>Welkom enzo</p>
+        <p>
+          Welkom op mijn portofolio website! <br/>
+          Hier houd ik jullie up to date met hoe mijn stage verloopt en zal ik proberen dagelijks een update te plaatsen.
+          Ik kijk ernaar uit om veel te leren van deze stage!
+          De website is een work in progress en zal dus continu worden bijgewerkt, zowel de functionaliteit als de stijling. <br/>
+
+          Hieronder staan enkele buttons naar de extra paginas! <br/>
+          <br/>
+
+          De website is gemaakt met Next.js, een framework van Vercel.<br/>
+          <br/>
+
+          Met vriendelijke groeten, <br/>
+          Lars Lauryssens
+        </p>
         {/* SECTION: Most Recent Post */}
 
         <section className={styles.infoSection} onClick={() => router.push("/blog") }>
