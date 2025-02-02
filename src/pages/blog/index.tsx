@@ -91,7 +91,7 @@ const postPage = ({ posts }: postPageProps) => {
       <h1 className={styles.pageTitle}>Mijn Blogs</h1>
      
       {admin && (
-        <AddForm />
+       <p>Even offline, hoe kom je aan het wachtwoord?</p>
       )}
       <BlogHeader filter={filter} setFilter={setFilter} handleAdmin={handleAdmin} admin={admin}/>
     
