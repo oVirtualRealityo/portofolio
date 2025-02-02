@@ -15,7 +15,7 @@ const aboutPage = () => {
   const introText: string = "Hallo! Ik ben <strong>Lars Lauryssens</strong>, een enthousiaste developer met een passie voor moderne webtechnologie en creatieve oplossingen. \n Ik hou van overzichtelijkheid, strakke vormgeving en praktische toepassingen. Ik leer snel en wil graag vooruitgang boeken. Ik spreek momenteel 4 talen en ben mijn vijfde aan het leren. \n  Mijn ervaring binnen IT groeit zeer snel omdat ik zeer leergierig ben en regelmatig op zelfstandige basis projecten maak zoals websites en apps."
 
   // Typing speed (ms per character) and extra pause (ms)
-  const speed = 50;
+  const speed = 20;
   const extraDelay = 50;
 
   // Compute an array of start delays for each skill:
@@ -57,12 +57,12 @@ const aboutPage = () => {
             </div>
             <blockquote className={styles.introText}>
               <q>
-                <Typewriter text={introText} speed={50} startDelay={0} />
+                <Typewriter text={introText} speed={20} startDelay={0} />
                 
               </q>
             </blockquote>
             <p style={{width:"100%", paddingBottom:"0.1rem"}}>
-            <Typewriter text="Ik kijk er naar uit om jullie up to date te houden met de ontwikkelingen tijdens mijn stage!" speed={80} startDelay={introText.length * 50 +100}/>
+            <Typewriter text="Ik kijk er naar uit om jullie up to date te houden met de ontwikkelingen tijdens mijn stage!" speed={50} startDelay={introText.length * 20 +100}/>
             </p>
            
             <cite>-- Lars Lauryssens</cite>

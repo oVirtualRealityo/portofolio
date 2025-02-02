@@ -15,6 +15,10 @@ const BlogHeader = ({admin, handleAdmin, filter, setFilter}: BlogHeaderProps) =>
         ) : (
           <button className={styles.loginButton} onClick={handleAdmin}>Log in</button>
         )}
+        {filter ? filter !== "" && (
+          <p>Active Tab: <span style={{color:"cyan"}}>{filter}</span></p>
+        ) : ("")}
+
         <div className={styles.filterBox}>
         {filter == "" ? (
           <p>klik op een tag om te filteren</p>

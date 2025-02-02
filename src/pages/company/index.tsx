@@ -28,7 +28,7 @@ const CompanyPage = () => {
           <section className={styles.collaborations}>
             <h2 className={styles.sectionTitle}>Over IBM CIC</h2>
             <p>
-              <Typewriter text={compDesc} speed={50} startDelay={0}/>
+              <Typewriter text={compDesc} speed={30} startDelay={0}/>
             </p>
           </section>
 
@@ -44,7 +44,7 @@ const CompanyPage = () => {
           <section className={styles.collaborations}>
             <h2 className={styles.sectionTitle}>Locatie</h2>
             <p>
-              <Typewriter text={locDesc} speed={50} startDelay={200}/>
+              <Typewriter text={locDesc} speed={30} startDelay={200}/>
             </p>
           </section>
           {/* Adres */}
@@ -72,12 +72,12 @@ const CompanyPage = () => {
               alt="Logo"
               width={300}
             />
-            <img
+           { /*<img
               className={styles.sectionImage}
               src="/team_photo.jpg"
               alt="Team Photo"
               width={300}
-            />
+            />*/}
           </section>
 
           {/* Navigation Link */}

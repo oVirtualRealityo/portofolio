@@ -88,7 +88,7 @@ const NavigationBar = () => {
                 Home
               </a>
             </Link>
-            <Link href="/blog" passHref legacyBehavior>
+            <Link href={{pathname:"/blog"}} passHref legacyBehavior>
               <a
                 onClick={handleLinkClick}
                 style={{
@@ -128,6 +128,20 @@ const NavigationBar = () => {
                 }}
               >
                 Over het bedrijf
+              </a>
+            </Link>
+            <Link href="/projects" passHref legacyBehavior>
+              <a
+                onClick={handleLinkClick}
+                style={{
+                  color: "inherit",
+                  textDecoration: "none",
+                  fontSize: "1.1rem",
+                  marginBottom: "20px",
+                  transition: "color 0.2s",
+                }}
+              >
+                Mijn projecten
               </a>
             </Link>
             

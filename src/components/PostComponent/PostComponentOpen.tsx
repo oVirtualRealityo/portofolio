@@ -16,7 +16,7 @@ const PostComponentOpen = ({ post, setFilter }: PostComponentOpenProps) => {
 
     
   // Choose a speed for each letter (in ms)
-  const speed = 50;
+  const speed = 20;
 
   // Calculate delays based on the length of each text plus some extra margin.
   // You can tweak the extra delay (here, 500ms) as needed.

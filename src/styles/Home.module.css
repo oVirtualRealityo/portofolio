@@ -34,20 +34,20 @@
   font-weight: 600; /* Semi-bold */
   letter-spacing: -0.02em;
   font-family: 'Press Start 2P', cursive; /* Arcade-style font */
+  text-shadow: 6px 4px 3px rgb(0, 0, 0);
+
 }
 
 .shortIntro {
   font-family: 'Press Start 2P', cursive;
   font-size: 0.9rem;
   line-height: 1.6;
-  overflow: hidden;
   display: inline-block;
   white-space: pre-line;
   color: #fff;
-  opacity: 0;
   max-width: 900px;
-  animation: typing 4s steps(40) 1s forwards, fadeIn 0.5s ease 5s forwards;
   margin-bottom: 3rem;
+  padding: 0.2rem;
 }
 
 
@@ -61,6 +61,9 @@
     margin-bottom: 2rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     font-family: 'Press Start 2P', cursive;
+    text-shadow: 6px 4px 3px rgb(0, 0, 0);
+
+
   }
 
 
@@ -79,9 +82,11 @@
   }
 
   .sectionText {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     line-height: 1.6;
-    margin: 0;
+    padding: 0.4rem;
+    text-shadow: 6px 4px 3px rgb(0, 0, 0);
+
   }
 
   /* Link Button */

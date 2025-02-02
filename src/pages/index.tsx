@@ -6,6 +6,7 @@ import styles from "@/styles/Home.module.css"
 import PostComponentOpenNoFilter from "@/components/PostComponent/PostComponentOpenNoFilter";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Typewriter from "@/components/TypeWriter/TypeWriter";
 
 
 interface HomePageProps {
@@ -49,24 +50,10 @@ const Home = ({ post }: HomePageProps) => {
    De website is een work in progress en zal dus continu worden bijgewerkt, zowel de functionaliteit als de stijling.\n
    Hieronder staan enkele buttons naar de extra paginas!\n 
    De website is gemaakt met Next.js, een framework van Vercel.\n
-   Met vriendelijke groeten,\n
+   Never settle,\n
    Lars Lauryssens`;
 
-   useEffect(() => {
-    const delayBeforeStart = 1000; // 1 second delay before starting the typewriter effect
-    let currentIndex = 0;
-    const startTimeout = setTimeout(() => {
-      const interval = setInterval(() => {
-        setDisplayedIntroText(fullIntroText.slice(0, currentIndex + 1));
-        currentIndex++;
-        if (currentIndex === fullIntroText.length) {
-          clearInterval(interval);
-        }
-      }, 50); // Change 50 (ms) to adjust the typing speed
-    }, delayBeforeStart);
-
-    return () => clearTimeout(startTimeout);
-  }, [fullIntroText]);
+  
 
   return (
     <div className={styles.pageWrapper}>
@@ -83,7 +70,7 @@ const Home = ({ post }: HomePageProps) => {
 
         {/* SECTION: Profile Picture */}
         <p className={styles.shortIntro}>
-        {displayedIntroText}
+        <Typewriter text={fullIntroText} speed={40} startDelay={0}/>
         </p>
         {/* SECTION: Most Recent Post */}
 
@@ -145,6 +132,9 @@ const Home = ({ post }: HomePageProps) => {
               
             </p>
           )}
+           <p style={{width:"100%", display: "flex", justifyContent:"flex-end"}}>
+          <Link href={{pathname:'/projects'}} title="Naar projecten" style={{color:"inherit"}}>Mijn projecten</Link>
+          </p>
         </section>
       </main>
 
