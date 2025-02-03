@@ -6,7 +6,7 @@ const aboutPage = () => {
   const [modalImage, setModalImage] = useState<string>("");
   const skills = [
     "Talen: Nederlands, Engels, Frans, Duits (matig), Spaans (lerend)",
-    "Programmeertalen: JavaScript, TypeScript, Python, React, C#, SQL, NOSQL, CSS, HTML",
+    "Programmeertalen: JavaScript, TypeScript, React, C#, SQL, NOSQL, CSS, HTML",
     "Bekwaam in: MongoDB, MySQL, React, React Native, Next.JS, Backend, FrontEnd, API ontwikkeling",
     "Portfoliorendement: +42% gemiddeld",
     "Extra: Teamplayer, leergierig, probleemoplosser",
