@@ -32,7 +32,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                 title,
                 description,
                 rating,
-                date: new Date().toDateString(),
+                date: date: new Date().toISOString(),
                 location,
                 createdAt: new Date(),
                 tags: splittags
