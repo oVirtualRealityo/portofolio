@@ -42,6 +42,9 @@ const postPage = ({ posts }: postPageProps) => {
   const sortedPosts = [...posts].sort((a, b) => {
       const dateA = new Date(a.date).getTime();
       const dateB = new Date(b.date).getTime();
+      console.log(a.date, dateA);
+      console.log(b.date, dateB);
+
 
     return dateB - dateA; // Sorts in descending order (latest date first, latest hour first)
   });  
