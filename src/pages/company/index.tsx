@@ -36,7 +36,7 @@ const CompanyPage = () => {
           <section className={styles.collaborations}>
             <h2 className={styles.sectionTitle}>Mijn Rol &amp; Responsibiliteiten</h2>
             <p>
-              <Typewriter text="Wordt nog aangevuld" speed={100} startDelay={5000}/>
+              <Typewriter text="Full-Stack developer & Data-engineer" speed={100} startDelay={5000}/>
             </p>
           </section>
 
