@@ -40,8 +40,8 @@ const postPage = ({ posts }: postPageProps) => {
 
   // Open the first post by default
   const sortedPosts = [...posts].sort((a, b) => {
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
+      const dateA = new Date(a.date).getTime();
+      const dateB = new Date(b.date).getTime();
 
     return dateB - dateA; // Sorts in descending order (latest date first, latest hour first)
   });  
