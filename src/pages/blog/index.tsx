@@ -39,7 +39,12 @@ const postPage = ({ posts }: postPageProps) => {
   const [filter, setFilter] = useState<string>("");
 
   // Open the first post by default
-  const sortedPosts = [...posts].sort((a, b) => b.date.toString().localeCompare(a.date.toString()));
+  const sortedPosts = [...posts].sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+
+    return dateB - dateA; // Sorts in descending order (latest date first, latest hour first)
+  });  
   const [openPostId, setOpenPostId] = useState<string | null>(sortedPosts[0]?._id || null);
   const filteredPosts: Post[] = sortedPosts.filter((post) =>
     post.tags.length === 0 || post.tags.some((tag) => tag.toLowerCase().includes(filter.toLowerCase()))
@@ -91,7 +96,7 @@ const postPage = ({ posts }: postPageProps) => {
       <h1 className={styles.pageTitle}>Mijn Blogs</h1>
      
       {admin && (
-        <AddForm/>
+        <p>Even offline</p>
 )}
       <BlogHeader filter={filter} setFilter={setFilter} handleAdmin={handleAdmin} admin={admin}/>
     
