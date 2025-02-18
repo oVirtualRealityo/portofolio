@@ -99,7 +99,7 @@ const postPage = ({ posts }: postPageProps) => {
       <h1 className={styles.pageTitle}>Mijn Blogs</h1>
      
       {admin && (
-        <p>How do you know the password?</p>
+        <Addform/>
 )}
       <BlogHeader filter={filter} setFilter={setFilter} handleAdmin={handleAdmin} admin={admin}/>
     
